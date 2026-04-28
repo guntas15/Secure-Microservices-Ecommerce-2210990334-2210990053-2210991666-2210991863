@@ -9,9 +9,7 @@
 ## Project Type
 Copyright
 
-## Description
-This project implements a scalable microservices-based e-commerce backend system using Spring Boot, JWT authentication, Eureka Server, and API Gateway.
 
-
-## Current Status
-Copyright filed (Status: Scrutiny)
+## 📊 Current Status
+Copyright Filed  
+Status: Scrutiny 
