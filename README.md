@@ -10,6 +10,6 @@
 Copyright
 
 
-## 📊 Current Status
+##  Current Status
 Copyright Filed  
 Status: Scrutiny 
