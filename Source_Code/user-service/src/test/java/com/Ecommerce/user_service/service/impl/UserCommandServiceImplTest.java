@@ -88,7 +88,7 @@ public class UserCommandServiceImplTest {
         );
 
         Role role = new Role();
-        role.setId(1);
+        role.setId(1L);
         role.setName("USER");
 
         User savedUser = User.builder()

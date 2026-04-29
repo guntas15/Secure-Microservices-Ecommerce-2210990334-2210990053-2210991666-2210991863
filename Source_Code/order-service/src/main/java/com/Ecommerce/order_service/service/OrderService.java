@@ -16,9 +16,9 @@ public interface OrderService {
 
     OrderCancelResponse cancelOrder(Long orderId, String authHeader);
 
-    List<OrderHistoryResponse> getOrderHistory();
+    List<OrderHistoryResponse> getOrderHistory(String authHeader);
 
-    List<AdminOrderResponse> getAllOrdersForAdmin();
+    List<AdminOrderResponse> getAllOrdersForAdmin(String authHeader);
 
     OrderResponse getOrderById(Long orderId, String authHeader);
 

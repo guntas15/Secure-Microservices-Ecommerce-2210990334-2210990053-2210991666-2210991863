@@ -50,13 +50,17 @@ public class OrderController {
 
 
     @GetMapping("/history")
-    public ResponseEntity<List<OrderHistoryResponse>> getOrderHistory() {
-        return ResponseEntity.ok(orderService.getOrderHistory());
+    public ResponseEntity<List<OrderHistoryResponse>> getOrderHistory(
+            @RequestHeader("Authorization") String authHeader
+    ) {
+        return ResponseEntity.ok(orderService.getOrderHistory(authHeader));
     }
     @GetMapping("/admin/all")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<AdminOrderResponse>> getAllOrdersForAdmin() {
-        return ResponseEntity.ok(orderService.getAllOrdersForAdmin());
+    public ResponseEntity<List<AdminOrderResponse>> getAllOrdersForAdmin(
+            @RequestHeader("Authorization") String authHeader
+    ) {
+        return ResponseEntity.ok(orderService.getAllOrdersForAdmin(authHeader));
     }
     @PutMapping("/internal/orders/{orderId}/paid")
     public void markOrderAsPaid(@PathVariable Long orderId) {

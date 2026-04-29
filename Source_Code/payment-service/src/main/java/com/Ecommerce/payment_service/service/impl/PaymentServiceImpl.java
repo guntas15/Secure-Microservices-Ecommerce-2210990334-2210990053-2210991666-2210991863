@@ -85,7 +85,8 @@ public class PaymentServiceImpl implements PaymentService {
                     new PaymentCompletedEvent(
                             payment.getOrderId(),
                             payment.getAmount(),
-                            payment.getPaymentMode()
+                            payment.getPaymentMode(),
+                            "Success"
                     )
             );
 
@@ -94,7 +95,8 @@ public class PaymentServiceImpl implements PaymentService {
             paymentEventProducer.publishPaymentFailed(
                     new PaymentFailedEvent(
                             payment.getOrderId(),
-                            "PAYMENT_FAILED"
+                            "PAYMENT_FAILED",
+                            "Failed"
                     )
             );
         }

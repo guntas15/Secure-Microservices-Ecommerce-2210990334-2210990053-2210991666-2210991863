@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class PaymentFailedEvent {
     private  long orderId;
     private String reason;
+    private String status;
 }

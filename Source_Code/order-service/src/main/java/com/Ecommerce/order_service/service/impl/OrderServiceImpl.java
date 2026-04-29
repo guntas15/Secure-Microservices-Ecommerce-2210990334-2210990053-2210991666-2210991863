@@ -153,10 +153,10 @@ public class OrderServiceImpl implements OrderService {
     // ORDER HISTORY
 
     @Override
-    public List<OrderHistoryResponse> getOrderHistory() {
+    public List<OrderHistoryResponse> getOrderHistory(String authHeader) {
 
         UserResponse user =
-                userResolverService.resolveCurrentUser(null);
+                userResolverService.resolveCurrentUser(authHeader);
 
         return orderDomainService.getOrdersByUser(user.getId())
                 .stream()
@@ -174,7 +174,7 @@ public class OrderServiceImpl implements OrderService {
     //  ADMIN
 
     @Override
-    public List<AdminOrderResponse> getAllOrdersForAdmin() {
+    public List<AdminOrderResponse> getAllOrdersForAdmin(String authHeader) {
 
         return orderDomainService.getAllOrders()
                 .stream()
